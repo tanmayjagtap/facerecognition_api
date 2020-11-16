@@ -5,7 +5,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 const register = require("./controllers/register");
-const signIn = require('./controllers/signIn');
+const signIn = require('./controllers/signin');
 const image = require('./controllers/image');
 const profile = require('./controllers/profile');
 
@@ -24,7 +24,7 @@ const app = express()
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {res.send(database.users)})
+app.get('/', (req, res) => {res.send('working')})
 
 app.post('/signin', (req, res) => signIn.signInHandler(req,res,db,bcrypt)) 
 
